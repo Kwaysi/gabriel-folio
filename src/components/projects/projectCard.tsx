@@ -1,8 +1,9 @@
 import { getFileURL } from "@/utils/helpers";
+import { TProjects } from "@/utils/types";
 import Image from "next/image";
 
 type ProjectProps = {
-	project: any;
+	project: TProjects;
 	index: number;
 };
 

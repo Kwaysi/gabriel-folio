@@ -17,7 +17,6 @@ export default function Home({ projects }: HomeProps) {
 	return (
 		<Layout>
 			<main className="max-w-6xl mx-auto">
-				<Hero />
 				<Projects projects={projects} />
 				<Contact />
 			</main>

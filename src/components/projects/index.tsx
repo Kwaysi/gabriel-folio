@@ -1,7 +1,8 @@
+import { TProjects } from "@/utils/types";
 import { ProjectCard } from "./projectCard";
 
 type ProjectProps = {
-	projects: any[];
+	projects: TProjects[];
 };
 
 export function Projects({ projects }: ProjectProps) {
