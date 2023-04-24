@@ -2,26 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: "GT Walsheim Pro";
+	src: local("GT Walsheim Pro Bold"), local("GT-Walsheim-Pro-Bold"),
+		url("../assets/fonts/GTWalsheimPro-Bold.woff2") format("woff2"),
+		url("../assets/fonts/GTWalsheimPro-Bold.woff") format("woff"),
+		url("../assets/fonts/GTWalsheimPro-Bold.ttf") format("truetype");
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "GT Walsheim Pro";
+	src: local("GT Walsheim Pro Medium"), local("GT-Walsheim-Pro-Medium"),
+		url("../assets/fonts/GTWalsheimPro-Medium.woff2") format("woff2"),
+		url("../assets/fonts/GTWalsheimPro-Medium.woff") format("woff"),
+		url("../assets/fonts/GTWalsheimPro-Medium.ttf") format("truetype");
+	font-weight: 500;
+	font-style: normal;
+}
+
+* {
+	transition: all ease-in-out 0.5s;
+	-o-transition: all ease-in-out 0.5s;
+	-ms-transition: all ease-in-out 0.5s;
+	-moz-transition: all ease-in-out 0.5s;
+	-webkit-transition: all ease-in-out 0.5s;
+}
+
+.walsh {
+	font-family: "GT Walsheim Pro", sans-serif;
+}
+
+.no-transition * {
+	transition: none;
+	-o-transition: none;
+	-ms-transition: none;
+	-moz-transition: none;
+	-webkit-transition: none;
+}
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 0, 0, 0;
+		--background-end-rgb: 0, 0, 0;
+	}
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	color: rgb(var(--foreground-rgb));
+	background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
+		rgb(var(--background-start-rgb));
+}
+
+.menu-item li {
+	@apply w-full py-4 text-center uppercase;
+}
+
+.menu-item li:hover {
+	@apply text-white  cursor-pointer;
 }
