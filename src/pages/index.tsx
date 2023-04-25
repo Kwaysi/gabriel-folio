@@ -2,33 +2,39 @@ import { Hero } from "@/components/hero";
 import { Layout } from "@/components/layout";
 import { Projects } from "@/components/projects";
 import { pocketbase } from "@/utils/pocketbase";
-import { TProjects } from "@/utils/types";
+import { TProjects, TSections } from "@/utils/types";
 import { GetStaticProps } from "next";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 type HomeProps = {
-	projects: any;
+	projects: TProjects[];
+	hero: TSections[];
 };
 
-export default function Home({ projects }: HomeProps) {
+export default function Home({ projects, hero }: HomeProps) {
 	return (
 		<Layout showTitle={false}>
-			<Hero />
-			<Projects projects={projects} />
+			<main className="max-w-6xl mx-auto p-1">
+				<Hero data={hero[0]} />
+				<Projects projects={projects} />
+			</main>
 		</Layout>
 	);
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const data = await pocketbase.collection("projects").getList<TProjects>(1, 5, {
-		filter: "featured = true",
-	});
+	const [data, hero] = await Promise.all([
+		pocketbase.collection("projects").getList<TProjects>(1, 5, {
+			filter: "featured = true",
+		}),
+		pocketbase.collection("sections").getList<TSections>(1, 1, {
+			filter: "name = 'hero'",
+		}),
+	]);
 
 	return {
 		props: {
 			projects: data.items.map((r) => r.export()),
+			hero: hero.items.map((r) => r.export()),
 		},
 		revalidate: 60 * 60, // 24 hours
 	};

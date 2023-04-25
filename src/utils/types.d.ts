@@ -6,6 +6,7 @@ export interface TProjects extends Record {
 	cover: string;
 	year: string;
 	description: string;
+	case_study: TCaseStudy;
 }
 
 export interface TExperience extends Record {
@@ -25,6 +26,7 @@ export interface TAffiliations extends Record {
 export interface TArchive extends Record {
 	image: string;
 	class: string;
+	landscape: boolean;
 }
 
 export interface TProjectData extends Record {
@@ -32,4 +34,20 @@ export interface TProjectData extends Record {
 	cover: string;
 	background: string;
 	project_data: string;
+}
+
+export interface TCaseStudy extends Record {
+	role: string;
+	cover: string;
+	content: string;
+	duration: string;
+	industry: string;
+	background: string;
+}
+
+export interface TSections extends Record {
+	name: string;
+	image: string;
+	content: string;
+	title: string;
 }

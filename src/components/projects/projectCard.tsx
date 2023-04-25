@@ -1,6 +1,7 @@
 import { TProjects } from "@/utils/types";
 import { getFileURL } from "@/utils/helpers";
 import Image from "next/image";
+import Link from "next/link";
 
 type ProjectProps = {
 	project: TProjects;
@@ -8,7 +9,7 @@ type ProjectProps = {
 };
 
 export function ProjectCard({ project, index }: ProjectProps) {
-	return (
+	const comp = (
 		<div
 			className={`flex max-w-3xl mx-auto ${index % 2 === 1 ? "flex-row-reverse" : ""} items-center`}
 		>
@@ -28,4 +29,7 @@ export function ProjectCard({ project, index }: ProjectProps) {
 			/>
 		</div>
 	);
+
+	if (project.case_study) return <Link href={`/work/${project.id}`}>{comp}</Link>;
+	return comp;
 }

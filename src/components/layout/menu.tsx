@@ -20,7 +20,12 @@ export function Menu({ open, setOpen }: MenuProps) {
 			<div className="relative h-screen">
 				<div className="flex justify-between px-16 py-6">
 					<h1 className="text-2xl">INYAMAH</h1>
-					<Image src={close} alt="close" onClick={() => setOpen(false)} className="cursor-pointer" />
+					<Image
+						src={close}
+						alt="close"
+						onClick={() => setOpen(false)}
+						className="cursor-pointer"
+					/>
 				</div>
 
 				<div className="p-6 text-grey">
@@ -32,7 +37,7 @@ export function Menu({ open, setOpen }: MenuProps) {
 							<MenuItem url={"/about"} isActive={pathname === "/about"} setOpen={setOpen}>
 								about
 							</MenuItem>
-							<MenuItem url={"/work"} isActive={pathname === "/work"} setOpen={setOpen}>
+							<MenuItem url={"/work"} isActive={pathname.includes("work")} setOpen={setOpen}>
 								work
 							</MenuItem>
 							<MenuItem url={"/archive"} isActive={pathname === "/archive"} setOpen={setOpen}>
@@ -41,7 +46,9 @@ export function Menu({ open, setOpen }: MenuProps) {
 							<MenuItem url={"#contact"} isActive={pathname.includes("#contact")} setOpen={setOpen}>
 								Contact
 							</MenuItem>
-							<li>Resume</li>
+							<MenuItem url={"#contact"} isActive={pathname.includes("#contact")} setOpen={setOpen}>
+								Resume
+							</MenuItem>
 						</ul>
 					</div>
 					<div className="w-full flex items-center justify-center absolute bottom-12 ">
@@ -66,10 +73,15 @@ type MenuItemProps = {
 
 const MenuItem = ({ url, isActive, setOpen, children }: MenuItemProps) => {
 	return (
-		<Link href={url}>
-			<li onClick={() => setOpen(false)} className={`${isActive ? "text-white line-through" : ""}`}>
-				{children}
-			</li>
-		</Link>
+		<div>
+			<Link href={url}>
+				<li
+					onClick={() => setOpen(false)}
+					className={`${isActive ? "text-white line-through" : ""}`}
+				>
+					{children}
+				</li>
+			</Link>
+		</div>
 	);
 };
