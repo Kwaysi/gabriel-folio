@@ -1,5 +1,4 @@
 import { Layout } from "@/components/layout";
-import { Contact } from "@/components/contact";
 import { pocketbase } from "@/utils/pocketbase";
 import { GetStaticProps } from "next";
 import { Inter } from "next/font/google";
@@ -19,14 +18,11 @@ type HomeProps = {
 export default function Home({ projects, experience, affiliations }: HomeProps) {
 	return (
 		<Layout>
-			<main className="max-w-6xl mx-auto">
-				<div className="py-20 space-y-16">
-					<Experience experience={experience} />
-					<Works works={projects} />
-					<Affiliations affiliation={affiliations} />
-				</div>
-				<Contact />
-			</main>
+			<div className="py-20 space-y-16">
+				<Experience experience={experience} />
+				<Works works={projects} />
+				<Affiliations affiliation={affiliations} />
+			</div>
 		</Layout>
 	);
 }

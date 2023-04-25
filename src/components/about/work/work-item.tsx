@@ -11,7 +11,7 @@ export function WorkItem({ project }: TWorkItemProps) {
 				<p className="text-grey text-xs">{project.tag}</p>
 				<p className="text-lg walsh">{project.name}</p>
 			</div>
-			<div className="text-grey">{project.year}</div>
+			<div className="text-grey text-xs">{project.year}</div>
 		</div>
 	);
 }

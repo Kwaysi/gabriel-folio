@@ -1,5 +1,5 @@
-import { getFileURL } from "@/utils/helpers";
 import { TProjects } from "@/utils/types";
+import { getFileURL } from "@/utils/helpers";
 import Image from "next/image";
 
 type ProjectProps = {
@@ -9,7 +9,9 @@ type ProjectProps = {
 
 export function ProjectCard({ project, index }: ProjectProps) {
 	return (
-		<div className={`flex max-w-3xl mx-auto ${index % 2 === 1 ? "flex-row-reverse" : ""} items-center`}>
+		<div
+			className={`flex max-w-3xl mx-auto ${index % 2 === 1 ? "flex-row-reverse" : ""} items-center`}
+		>
 			<div className={`space-y-8 ${index % 2 === 1 ? "ml-10" : "mr-10"}`}>
 				<div className="space-y-2">
 					<h1 className="walsh text-xl">{project.name}</h1>

@@ -5,8 +5,6 @@ type TExperienceProps = {
 };
 
 export function ExperienceItem({ experience }: TExperienceProps) {
-	console.log(experience);
-
 	return (
 		<div className="py-6 flex justify-between items-center">
 			<div className="space-y-2">
@@ -17,7 +15,7 @@ export function ExperienceItem({ experience }: TExperienceProps) {
 				</p>
 				<p className="text-lg walsh">{experience.title}</p>
 			</div>
-			<div className="text-grey">{experience.year}</div>
+			<div className="text-grey text-xs">{experience.year}</div>
 		</div>
 	);
 }

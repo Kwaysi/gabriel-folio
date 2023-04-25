@@ -11,7 +11,7 @@ export function AffiliationItem({ affiliation }: TAffiliationItemProps) {
 				<p className="text-grey text-xs">{affiliation.name}</p>
 				<p className="text-lg walsh">{affiliation.title}</p>
 			</div>
-			<div className="text-grey">{affiliation.year}</div>
+			<div className="text-grey text-xs">{affiliation.year}</div>
 		</div>
 	);
 }
