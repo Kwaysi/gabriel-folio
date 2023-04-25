@@ -8,7 +8,6 @@ import { Works } from "@/components/about/work";
 import Image from "next/image";
 import { getFileURL } from "@/utils/helpers";
 
-
 type HomeProps = {
 	about: TSections[];
 	moreAbout: TSections[];
@@ -75,10 +74,7 @@ export const getStaticProps: GetStaticProps = async () => {
 			filter: "name = 'more-about'",
 			$autoCancel: false,
 		}),
-	]).catch((err) => {
-		console.log(err);
-		return [];
-	});
+	]);
 
 	return {
 		props: {
