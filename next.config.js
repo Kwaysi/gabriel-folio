@@ -2,7 +2,7 @@
 const nextConfig = {
 	reactStrictMode: true,
 	images: {
-		domains: ["gbadmin.creosis.com"],
+		domains: ["content.inyamah.me"],
 	},
 };
 
