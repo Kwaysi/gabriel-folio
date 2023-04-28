@@ -43,7 +43,11 @@ export function Menu({ open, setOpen }: MenuProps) {
 							<MenuItem url={"/archive"} isActive={pathname === "/archive"} setOpen={setOpen}>
 								Archive
 							</MenuItem>
-							<MenuItem url={"#contact"} isActive={pathname.includes("#contact")} setOpen={setOpen}>
+							<MenuItem
+								url={"mailto:inyamahgabrielimoh@gmail.com"}
+								isActive={pathname.includes("#contact")}
+								setOpen={setOpen}
+							>
 								Contact
 							</MenuItem>
 							<MenuItem
@@ -59,11 +63,15 @@ export function Menu({ open, setOpen }: MenuProps) {
 					</div>
 					<div className="w-full flex items-center justify-center absolute bottom-12 ">
 						<ul className="flex space-x-10 sm-links">
-							<a href="https://www.linkedin.com/in/gabriel-inyamah/" rel="noreferrer noopener" target="_blank">
+							<a
+								href="https://www.linkedin.com/in/gabriel-inyamah/"
+								rel="noreferrer noopener"
+								target="_blank"
+							>
 								<li>Linkedin</li>
 							</a>
 							<a href="https://dribbble.com/Inyamah" target="_blank">
-								<li>Dribble</li>
+								<li>Dribbble</li>
 							</a>
 							<a href="https://medium.com/@inyamah" target="_blank">
 								<li>Medium</li>

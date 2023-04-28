@@ -13,13 +13,13 @@ export function Footer() {
 					</div>
 					<div>
 						<ul className="flex space-x-10 sm-links">
-							<a href="https://www.linkedin.com/in/gabriel-inyamah/">
+							<a href="https://www.linkedin.com/in/gabriel-inyamah/" target="_blank">
 								<li>Linkedin</li>
 							</a>
-							<a href="https://dribbble.com/Inyamah">
-								<li>Dribble</li>
+							<a href="https://dribbble.com/Inyamah" target="_blank">
+								<li>Dribbble</li>
 							</a>
-							<a href="https://medium.com/@inyamah">
+							<a href="https://medium.com/@inyamah" target="_blank">
 								<li>Medium</li>
 							</a>
 						</ul>

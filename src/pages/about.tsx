@@ -47,7 +47,7 @@ export default function Home({ projects, experience, affiliations, about, moreAb
 						/>
 					</div>
 					<div
-						className="space-y-4 w-[652px]"
+						className="space-y-4 w-[652px] font-medium"
 						dangerouslySetInnerHTML={{ __html: moreAbout[0].content }}
 					/>
 				</div>
