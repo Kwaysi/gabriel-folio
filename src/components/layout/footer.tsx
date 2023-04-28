@@ -6,8 +6,8 @@ export function Footer() {
 					<div>
 						<p>
 							Contact Me -
-							<a href="mailto:hello@inyamah.me" className="underline">
-								hello@inyamah.com
+							<a href="mailto:inyamahgabrielimoh@gmail.com" className="underline">
+							inyamahgabrielimoh@gmail.com
 							</a>
 						</p>
 					</div>

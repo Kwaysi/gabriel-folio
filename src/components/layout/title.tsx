@@ -1,5 +1,6 @@
-import { useRouter } from "next/router";
+import Link from "next/link";
 import { useRef } from "react";
+import { useRouter } from "next/router";
 
 export function PageTitle() {
 	const { pathname } = useRouter();
@@ -8,7 +9,9 @@ export function PageTitle() {
 	return (
 		<div className="space-y-10 max-w-6xl mx-auto mt-36 mb-10">
 			<div className="flex capitalize items-center space-x-2">
-				<p className="text-white text-opacity-30">Home</p>
+				<p className="text-white text-opacity-30">
+					<Link href="/">Home</Link>
+				</p>
 				<p className="text-white text-opacity-10">|</p>
 				<p>{title}</p>
 			</div>
