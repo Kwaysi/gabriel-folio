@@ -46,16 +46,28 @@ export function Menu({ open, setOpen }: MenuProps) {
 							<MenuItem url={"#contact"} isActive={pathname.includes("#contact")} setOpen={setOpen}>
 								Contact
 							</MenuItem>
-							<MenuItem url={"#contact"} isActive={pathname.includes("#contact")} setOpen={setOpen}>
+							<MenuItem
+								url={
+									"https://docs.google.com/document/d/1IuT7Am90GWjLfVGDiZkjn70wWHEnLY0nkEpzKVstxxg/edit?usp=sharing"
+								}
+								isActive={pathname.includes("#contact")}
+								setOpen={setOpen}
+							>
 								Resume
 							</MenuItem>
 						</ul>
 					</div>
 					<div className="w-full flex items-center justify-center absolute bottom-12 ">
-						<ul className="flex space-x-10">
-							<li>Linkedin</li>
-							<li>Dribble</li>
-							<li>Medium</li>
+						<ul className="flex space-x-10 sm-links">
+							<a href="https://www.linkedin.com/in/gabriel-inyamah/">
+								<li>Linkedin</li>
+							</a>
+							<a href="https://dribbble.com/Inyamah">
+								<li>Dribble</li>
+							</a>
+							<a href="https://medium.com/@inyamah">
+								<li>Medium</li>
+							</a>
 						</ul>
 					</div>
 				</div>

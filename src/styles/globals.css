@@ -134,3 +134,7 @@ body {
 .more-about {
 	@apply text-lg py-16 mt-16;
 }
+
+.sm-links a {
+	@apply hover:text-white
+}
