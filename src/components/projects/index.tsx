@@ -7,8 +7,8 @@ type ProjectProps = {
 
 export function Projects({ projects }: ProjectProps) {
 	return (
-		<div className="space-y-20 py-16">
-			{projects.map((project: any,index) => (
+		<div className="px-6 md:px-0 py-16 divide-y divide-[#3D3D3D]">
+			{projects.map((project: any, index) => (
 				<ProjectCard project={project} key={project.id} index={index} />
 			))}
 		</div>

@@ -86,7 +86,7 @@ body {
 }
 
 .proj-content p {
-	@apply text-lg px-12; 
+	@apply text-lg px-12;
 }
 
 .proj-content h1 {
@@ -128,13 +128,18 @@ body {
 
 .hero h1,
 .hero h2 {
-	@apply font-medium text-[40px] leading-[1.2];
+	@apply font-medium text-3xl md:text-[40px] leading-[1.2];
 }
 
 .more-about {
 	@apply text-lg py-16 mt-16;
 }
 
-.sm-links a {
-	@apply hover:text-white
+.sm-links a,
+.sm-links-m a {
+	@apply hover:text-white;
+}
+
+.sm-links-m > li, .sm-links-m > a  {
+	@apply block;
 }

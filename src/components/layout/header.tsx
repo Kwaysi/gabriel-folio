@@ -21,12 +21,12 @@ export function Header() {
 	return (
 		<>
 			<header
-				className={`w-full flex justify-between px-16 py-6 text-white fixed z-10 ${
+				className={`w-full flex justify-between px-6 md:px-16 py-4 md:py-6 text-white fixed z-10 ${
 					show ? "bg-black" : ""
 				}`}
 			>
 				<Link href={"/"}>
-					<h1 className="text-2xl">INYAMAH</h1>
+					<h1 className="md:text-2xl">INYAMAH</h1>
 				</Link>
 				<div className="cursor-pointer">
 					<Image src={menu} alt="menu" onClick={() => setOpen(true)} />

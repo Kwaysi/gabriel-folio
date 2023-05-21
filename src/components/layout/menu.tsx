@@ -18,8 +18,8 @@ export function Menu({ open, setOpen }: MenuProps) {
 			} z-20`}
 		>
 			<div className="relative h-screen">
-				<div className="flex justify-between px-16 py-6">
-					<h1 className="text-2xl">INYAMAH</h1>
+				<div className="flex justify-between px-6 md:px-16 py-4 md:py-6">
+					<h1 className="md:text-2xl">INYAMAH</h1>
 					<Image
 						src={close}
 						alt="close"
@@ -28,8 +28,8 @@ export function Menu({ open, setOpen }: MenuProps) {
 					/>
 				</div>
 
-				<div className="p-6 text-grey">
-					<div className="text-4xl menu-item">
+				<div className="text-grey">
+					<div className="p-6 text-4xl menu-item">
 						<ul className="space-y-6 w-full">
 							<MenuItem url={"/"} isActive={pathname === "/"} setOpen={setOpen}>
 								Home

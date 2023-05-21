@@ -5,7 +5,7 @@ import btncircle from "../../assets/btn-circle.svg";
 export function Contact() {
 	return (
 		<div
-			className="flex justify-center flex-col text-center items-center space-y-14 py-16"
+			className="px-6 md:px-0 flex justify-center flex-col text-center items-center space-y-14 py-16"
 			id="contact"
 		>
 			<div className="space-y-4">
