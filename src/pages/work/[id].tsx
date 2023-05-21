@@ -1,5 +1,5 @@
 import { Layout } from "@/components/layout";
-import { getFileURL } from "@/utils/helpers";
+import { getFileURL, getRole } from "@/utils/helpers";
 import { pocketbase } from "@/utils/pocketbase";
 import { TProjects } from "@/utils/types";
 import { GetStaticPaths, GetStaticProps } from "next";
@@ -33,22 +33,24 @@ export default function CaseStudy({ project }: CaseStudyProps) {
 					<h1 className="text-5xl font-bold">{project.name}</h1>
 					<p>{project.description}</p>
 				</div>
-				<div className="absolute bottom-0 w-1/2 aspect-video">
+				<div className="absolute bottom-0 md:w-1/2 aspect-video  w-full">
 					<Image
 						alt=""
 						src={getFileURL(project.case_study, project.case_study.cover)}
 						fill
-						className="object-cover"
+						className="object-cover px-6 md:px-0"
 					/>
 				</div>
 			</div>
 			<div className="space-y-16">
-				<div className="mt-36 flex justify-between max-w-3xl mx-auto">
+				<div className="mt-36 md:flex justify-between max-w-3xl mx-auto px-6 md:px-0 space-y-6 md:space-y-0">
 					<div className="space-y-3">
 						{project.case_study.role && (
 							<>
 								<p className="text-xs text-grey">Role</p>
-								<p>{project.case_study.role}</p>
+								{getRole(project.case_study.role).map((r) => (
+									<span key={r}>{r}</span>
+								))}
 							</>
 						)}
 					</div>

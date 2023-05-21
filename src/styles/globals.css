@@ -81,12 +81,17 @@ body {
 .proj-content h3 {
 	color: white;
 	font-weight: 700;
-	padding: 0 48px;
 	font-family: "GT Walsheim Pro";
 }
 
+.proj-content h1,
+.proj-content h2,
+.proj-content h3 {
+	@apply px-6 md:px-12;
+}
+
 .proj-content p {
-	@apply text-lg px-12;
+	@apply text-lg px-6 md:px-12;
 }
 
 .proj-content h1 {
