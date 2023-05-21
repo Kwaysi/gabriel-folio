@@ -8,7 +8,7 @@ export function PageTitle() {
 
 	return (
 		<div className="space-y-10 max-w-6xl mx-auto mt-36 mb-10">
-			<div className="flex capitalize items-center space-x-2">
+			<div className="px-6 md:px-0 flex capitalize items-center space-x-2">
 				<p className="text-white text-opacity-30">
 					<Link href="/">Home</Link>
 				</p>

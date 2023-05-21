@@ -20,9 +20,9 @@ export default function Home({ projects, experience, affiliations, about, moreAb
 	return (
 		<Layout>
 			<main className="max-w-6xl mx-auto p-1">
-				<div className="flex justify-between items-center space-x-6 relative">
+				<div className="md:flex justify-between items-center space-x-6 relative">
 					<div
-						className="space-y-4 w-[652px] hero"
+						className="space-y-4 w-full md:w-[652px] hero"
 						dangerouslySetInnerHTML={{ __html: about[0].content }}
 					/>
 					<div>
@@ -31,12 +31,12 @@ export default function Home({ projects, experience, affiliations, about, moreAb
 							alt="hero"
 							width={500}
 							height={500}
-							className="aspect-square object-cover"
+							className="aspect-square object-cover w-full"
 						/>
 					</div>
 				</div>
 
-				<div className="flex justify-between items-center space-x-6 relative more-about">
+				<div className="px-6 md:px-0 flex flex-col-reverse md:flex-row justify-between items-center space-y-10 md:space-y-0 md:space-x-6 relative more-about">
 					<div>
 						<Image
 							src={getFileURL(moreAbout[0], moreAbout[0].image)}
@@ -47,7 +47,7 @@ export default function Home({ projects, experience, affiliations, about, moreAb
 						/>
 					</div>
 					<div
-						className="space-y-4 w-[652px] font-medium"
+						className="space-y-4 w-full md:w-[652px] font-medium"
 						dangerouslySetInnerHTML={{ __html: moreAbout[0].content }}
 					/>
 				</div>
