@@ -23,7 +23,7 @@ export default function Home({ projects, hero }: HomeProps) {
 
 export const getStaticProps: GetStaticProps = async () => {
 	const [data, hero] = await Promise.all([
-		pocketbase.collection("projects").getList<TProjects>(1, 5, {
+		pocketbase.collection("projects").getList<TProjects>(1, undefined, {
 			filter: "featured = true",
 		}),
 		pocketbase.collection("sections").getList<TSections>(1, 1, {
