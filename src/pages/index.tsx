@@ -23,7 +23,7 @@ export default function Home({ projects, hero }: HomeProps) {
 
 export const getStaticProps: GetStaticProps = async () => {
 	const [data, hero] = await Promise.all([
-		pocketbase.collection("projects").getList<TProjects>(1, undefined, {
+		pocketbase.collection("projects").getFullList<TProjects>({
 			filter: "featured = true",
 		}),
 		pocketbase.collection("sections").getList<TSections>(1, 1, {
@@ -33,7 +33,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 	return {
 		props: {
-			projects: data.items.map((r) => r.export()),
+			projects: data.map((r) => r.export()),
 			hero: hero.items.map((r) => r.export()),
 		},
 		revalidate: 60 * 60, // 24 hours
