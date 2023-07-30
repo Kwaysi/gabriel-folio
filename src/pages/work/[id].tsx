@@ -2,6 +2,8 @@ import { Layout } from "@/components/layout";
 import { getFileURL, getRole } from "@/utils/helpers";
 import { pocketbase } from "@/utils/pocketbase";
 import { TProjects } from "@/utils/types";
+import { data } from "autoprefixer";
+import { log } from "console";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Image from "next/image";
 
@@ -87,10 +89,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 	const id = (params?.id ?? "") as string;
 
 	const {
-		expand: { case_study },
-		...data
-	} = await pocketbase.collection("projects").getOne<TProjects>(id, {
+		items: [
+			{
+				expand: { case_study },
+				...data
+			},
+		],
+	} = await pocketbase.collection("projects").getList<TProjects>(1, 1, {
 		expand: "case_study",
+		filter: `slug = '${id}'`,
 	});
 
 	return {

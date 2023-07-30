@@ -1,14 +1,14 @@
+import Image from "next/image";
+import { GetStaticProps } from "next";
 import { Layout } from "@/components/layout";
-import { Projects } from "@/components/projects";
 import { getFileURL } from "@/utils/helpers";
 import { pocketbase } from "@/utils/pocketbase";
+import { Projects } from "@/components/projects";
 import { TProjects, TSections } from "@/utils/types";
-import { GetStaticProps } from "next";
-import Image from "next/image";
 
 type WorkProps = {
-	projects: TProjects[];
 	hero: TSections[];
+	projects: TProjects[];
 };
 
 export default function Work({ projects, hero }: WorkProps) {
@@ -38,7 +38,7 @@ export default function Work({ projects, hero }: WorkProps) {
 
 export const getStaticProps: GetStaticProps = async () => {
 	const [data, hero] = await Promise.all([
-		pocketbase.collection("projects").getList<TProjects>(1, 5, {
+		pocketbase.collection("projects").getFullList<TProjects>({
 			filter: "featured = true",
 		}),
 		pocketbase.collection("sections").getList<TSections>(1, 1, {
@@ -48,8 +48,8 @@ export const getStaticProps: GetStaticProps = async () => {
 
 	return {
 		props: {
+			projects: data.map((r) => r.export()),
 			hero: hero.items.map((r) => r.export()),
-			projects: data.items.map((r) => r.export()),
 		},
 		revalidate: 60 * 60, // 24 hours
 	};

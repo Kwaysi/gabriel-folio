@@ -64,9 +64,9 @@ export default function Home({ projects, experience, affiliations, about, moreAb
 
 export const getStaticProps: GetStaticProps = async () => {
 	const [projects, experience, affiliations, about, moreAbout] = await Promise.all([
-		pocketbase.collection("projects").getList<TProjects>(1, 25, {}),
-		pocketbase.collection("experience").getList<TExperience>(1, 25, {}),
-		pocketbase.collection("affiliations").getList<TAffiliations>(1, 25, {}),
+		pocketbase.collection("projects").getFullList<TProjects>(),
+		pocketbase.collection("experience").getFullList<TExperience>(),
+		pocketbase.collection("affiliations").getFullList<TAffiliations>(),
 		pocketbase.collection("sections").getList<TSections>(1, 1, {
 			filter: "name = 'about'",
 		}),
@@ -79,10 +79,10 @@ export const getStaticProps: GetStaticProps = async () => {
 	return {
 		props: {
 			about: about.items.map((r) => r.export()),
-			projects: projects.items.map((r) => r.export()),
+			projects: projects.map((r) => r.export()),
+			experience: experience.map((r) => r.export()),
+			affiliations: affiliations.map((r) => r.export()),
 			moreAbout: moreAbout.items.map((r) => r.export()),
-			experience: experience.items.map((r) => r.export()),
-			affiliations: affiliations.items.map((r) => r.export()),
 		},
 		revalidate: 60 * 60, // 24 hours
 	};

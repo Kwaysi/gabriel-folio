@@ -1,26 +1,27 @@
 import { Record } from "pocketbase";
 
 export interface TProjects extends Record {
-	name: string;
 	tag: string;
-	cover: string;
+	name: string;
+	slug: string;
 	year: string;
+	cover: string;
 	description: string;
 	case_study: TCaseStudy;
 }
 
 export interface TExperience extends Record {
+	year: string;
+	title: string;
 	company: string;
 	location: string;
-	title: string;
-	year: string;
 }
 
 export interface TAffiliations extends Record {
 	id: string;
 	name: string;
-	title: string;
 	year: string;
+	title: string;
 }
 
 export interface TArchive extends Record {
@@ -48,6 +49,6 @@ export interface TCaseStudy extends Record {
 export interface TSections extends Record {
 	name: string;
 	image: string;
-	content: string;
 	title: string;
+	content: string;
 }

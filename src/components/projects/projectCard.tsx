@@ -33,7 +33,7 @@ export function ProjectCard({ project, index }: ProjectProps) {
 	if (project.case_study)
 		return (
 			<div className="max-w-3xl mx-auto py-10">
-				<Link href={`/work/${project.id}`}>{comp}</Link>
+				<Link href={`/work/${project.slug}`}>{comp}</Link>
 			</div>
 		);
 	return comp;
