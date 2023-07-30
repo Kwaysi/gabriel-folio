@@ -1,13 +1,13 @@
+import { GetStaticProps } from "next";
 import { Hero } from "@/components/hero";
 import { Layout } from "@/components/layout";
-import { Projects } from "@/components/projects";
 import { pocketbase } from "@/utils/pocketbase";
+import { Projects } from "@/components/projects";
 import { TProjects, TSections } from "@/utils/types";
-import { GetStaticProps } from "next";
 
 type HomeProps = {
-	projects: TProjects[];
 	hero: TSections[];
+	projects: TProjects[];
 };
 
 export default function Home({ projects, hero }: HomeProps) {
